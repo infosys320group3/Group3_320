@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InstantiatePrefab : MonoBehaviour {
+public class InstantiateSuspension : MonoBehaviour
+{
 
     public Button prefabButton;
     public GameObject objPrefab;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         Button prefabBtn = prefabButton.GetComponent<Button>();
 
         prefabBtn.onClick.AddListener(InstantiateMethod);
-	}
+    }
 
-    void InstantiateMethod() {
-        var objClass = (GameObject)Instantiate(objPrefab, new Vector3(2, 1.2F, 6), Quaternion.identity);
-        objClass.transform.Rotate(0, 220, 0);
-        objClass.transform.localScale += new Vector3(12, 12, 12);
-        
+    void InstantiateMethod()
+    {
+        var objClass = (GameObject)Instantiate(objPrefab, new Vector3(-8.5F, 6.5F, 7), Quaternion.identity);
+        objClass.transform.Rotate(0, 180, 0);
+        objClass.transform.localScale += new Vector3(5, 5, 5);
+
     }
 }
